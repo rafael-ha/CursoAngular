@@ -1,0 +1,29 @@
+<div>
+  <h1>Pipes Personalizados</h1>
+  <p>Pipes creados por {{ "nosotros" | mayusculas: enMayusculas }}</p>
+  <button (click)="cambiarMayus()">Toggle mayus</button>
+</div>
+
+<hr />
+
+<div>
+  <button (click)="cambiarOrden('nombre')">Por nombre</button>
+  <button (click)="cambiarOrden('vuela')">Vuela</button>
+  <button (click)="cambiarOrden('color')">Por color</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Vuela</th>
+        <th>Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let heroe of heroes | ordenar:ordenarPor">
+        <td>{{ heroe.nombre }}</td>
+        <td>{{ heroe.vuela | vuela | titlecase }}</td>
+        <td>{{ heroe.color }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

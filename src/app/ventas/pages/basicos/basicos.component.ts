@@ -1,0 +1,17 @@
+import { Component} from '@angular/core';
+
+@Component({
+  selector: 'app-basicos',
+  templateUrl: './basicos.component.html',
+  styles: [
+  ]
+})
+export class BasicosComponent   {
+
+  nombreLower: string = 'rafa';
+  nombreUpper: string = 'RAFA';
+  nombreCompleto: string = 'rAfA herReRa';
+
+
+  fecha: Date = new Date();
+}

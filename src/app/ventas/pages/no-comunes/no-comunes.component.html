@@ -1,0 +1,46 @@
+<div>
+  <h2>i18nSelect Pipe</h2>
+  <p>
+    Saludos {{ nombre }}, es un placer
+    {{ genero | i18nSelect: invitacionMapa }} a nuestro evento.
+  </p>
+  <button (click)="cambiarCliente()">Cambiar persona</button>
+</div>
+
+<div>
+  <h2>i18nPlural Pipe</h2>
+  <p>Actualmente {{ clientes.length | i18nPlural: clientesMapa }}</p>
+  <button (click)="borrarCliente()">Borrar cliente.</button>
+</div>
+
+<div>
+  <h2>Slice Pipe</h2>
+  <b>Original</b>
+  <pre>{{ clientes }}</pre>
+  <b>slice:0:2</b>
+  <pre>{{ clientes | slice: 0:2 }}</pre>
+  <b>slice:1:2</b>
+  <pre>{{ clientes | slice: 1:2 }}</pre>
+</div>
+<div>
+  <h2>KeyValue Pipe</h2>
+  <ul>
+    <li *ngFor="let item of persona | keyvalue">
+      {{ item.key | titlecase }}: {{ item.value }}
+    </li>
+  </ul>
+</div>
+<div>
+  <h2>JSON Pipe</h2>
+  <pre>
+    {{ heroes | json }}
+  </pre>
+</div>
+<div>
+  <h2>Async Pipe</h2>
+  <pre *ngIf="!(miObservable | async)">Resolviendo observable</pre>
+  <pre>{{ miObservable | async }}</pre>
+
+  <pre *ngIf="!(valorPromesa | async)">Resolviendo promesa</pre>
+  <pre>{{ valorPromesa | async }}</pre>
+</div>

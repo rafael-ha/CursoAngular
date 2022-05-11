@@ -1,0 +1,44 @@
+<div>
+  <h1>Pipes basicos</h1>
+  <p>Pipes incluidos en Angular - Usualmente en el CommonModule</p>
+</div>
+
+<div>
+  <h2>Uppercase</h2>
+  <p>{{ nombreLower | uppercase }}</p>
+</div>
+<div>
+  <h2>Lowercase</h2>
+  <p>{{ nombreLower | lowercase }}</p>
+</div>
+<div>
+  <h2>Titlecase</h2>
+  <p>{{ nombreCompleto | titlecase }}</p>
+</div>
+
+<hr />
+
+<div>
+  <h2>Date Pipe</h2>
+  <ul>
+    <li>fecha</li>
+    <li>{{fecha}}</li>
+    <li>fecha|date</li>
+    <li>{{fecha | date}}</li>
+    <li>fecha|date:'short'</li>
+    <li>{{fecha|date:'short'}}</li>
+    <li>fecha|date:'long'</li>
+    <li>{{fecha|date:'long'}}</li>
+    <li>fecha|date:'dd/mm/yy'</li>
+    <li>{{fecha|date:'dd/MM/yy'}}</li>
+    <li>fecha|date:'MMMM'</li>
+    <li>{{fecha|date:'MMMM'}}</li>
+  </ul>
+  <hr>
+  <ul>
+    <li>{{fecha|date:'long':'GMT-6'}}</li>
+    <li>fecha|date:'long':'GMT-6'</li>
+    <li>{{fecha|date:'long':'GMT-4'}}</li>
+    <li>fecha|date:'long':'GMT-4'</li>
+  </ul>
+</div>

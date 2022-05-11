@@ -1,0 +1,17 @@
+<div>
+  <h1>DecimalPipe y Porcentaje</h1>
+  <p>Pipes incluidos en Angular - Usualmente en el CommonModule</p>
+</div>
+
+<div>
+  <h2>Ventas netas del año</h2>
+  <p>{{ventasNetas | number:'1.2-2'}}</p>
+</div>
+<div>
+  <h2>Ventas brutas del año</h2>
+  <p>{{ventasNetas | currency:'CAD':'symbol-narrow':'1.0-4'}}</p>
+</div>
+<div>
+  <h2>Ganancia porcentual</h2>
+  <p>{{porcentaje|percent:'2.2-2'}}</p>
+</div>
