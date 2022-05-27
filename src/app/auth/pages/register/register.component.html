@@ -1,0 +1,116 @@
+<h2>Validaciones Reactivas</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <form autocomplete="off" [formGroup]="miForm" (ngSubmit)="submitForm()">
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Nombre</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            formControlName="nombre"
+            class="form-control"
+            placeholder="Nombre del usuario"
+          />
+          <span class="form-text text-danger" *ngIf="campoNoValido('nombre')"
+            >Debe de ser en formato de nombre y apellido</span
+          >
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            placeholder="Email del usuario"
+          /><span class="form-text text-danger" *ngIf="campoNoValido('email')"
+          >{{emailErrorMsg}}</span
+        >
+          <!-- <span class="form-text text-danger" *ngIf="emailRequired()"
+            >El correo es obligatorio</span
+          >
+          <span class="form-text text-danger" *ngIf="emailFormato()"
+            >El valor no tiene formato de correo</span
+          >
+          <span class="form-text text-danger" *ngIf="emailTomado()"
+            >El correo electronico ya fue tomado</span
+          > -->
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Usuario</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            formControlName="usuario"
+            class="form-control"
+            placeholder="Codigo de usuario"
+          />
+          <span class="form-text text-danger" *ngIf="campoNoValido('usuario')"
+            >El usuario no puede ser strider</span
+          >
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <input
+            type="password"
+            formControlName="pass"
+            class="form-control"
+            placeholder="Password de su cuenta"
+          />
+          <span class="form-text text-danger" *ngIf="campoNoValido('pass')"
+            >La contraseña debe ser mayor de 6 caracteres</span
+          >
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Confirmar</label>
+        <div class="col-sm-9">
+          <input
+            type="password"
+            formControlName="confirm_pass"
+            class="form-control"
+            placeholder="Confirmar su contraseña"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="campoNoValido('confirm_pass')"
+            >Las contraseñas deben de ser iguales</span
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button
+            type="submit"
+            class="btn btn-primary float-end"
+            [disabled]="miForm.pending"
+          >
+            Crear
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<h3>Form valid: {{ miForm.valid }}</h3>
+<h5>Nombre</h5>
+<pre>{{ miForm.controls["nombre"].errors | json }}</pre>
+
+<h5>Email</h5>
+<pre>{{ miForm.controls["email"].errors | json }}</pre>
+<h5>Username</h5>
+<pre>{{ miForm.controls["usuario"].errors | json }}</pre>
+<h5>Pass</h5>
+<pre>{{ miForm.controls["pass"].errors | json }}</pre>
+<h5>Confirmar pass</h5>
+<pre>{{ miForm.controls["confirm_pass"].errors | json }}</pre>

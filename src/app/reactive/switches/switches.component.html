@@ -1,0 +1,85 @@
+<h2>Reactivos: <small>Switches</small></h2>
+<hr />
+
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Género</label>
+    <div class="col-sm-9">
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          id="radioMasc"
+          value="M"
+          formControlName="genero"
+          class="custom-control-input"
+        />
+        <label class="custom-control-label" for="radioMasc">Masculino</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          id="radioFem"
+          formControlName="genero"
+          value="F"
+          class="custom-control-input"
+        />
+        <label class="custom-control-label" for="radioFem">Femenino</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Notificaciones</label>
+    <div class="col-sm-9">
+      <div class="custom-control custom-switch mt-1">
+        <input
+          type="checkbox"
+          formControlName="notificaciones"
+          class="custom-control-input"
+          id="customSwitch1"
+        />
+        <label class="custom-control-label" for="customSwitch1"
+          >Toggle this switch element</label
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label"></label>
+    <div class="col-sm-9">
+      <div class="custom-control custom-checkbox">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          formControlName="condiciones"
+          id="customCheck1"
+        />
+        <label class="custom-control-label" for="customCheck1"
+          >Check this custom checkbox</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary float-end" type="submit">Guardar</button>
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{ miFormulario.valid }}</pre>
+
+    <span>Pristine</span>
+    <pre>{{ miFormulario.pristine }}</pre>
+
+    <span>Touched</span>
+    <pre>{{ miFormulario.touched }}</pre>
+
+    <span>Value</span>
+    <pre>{{ miFormulario.value | json }} </pre>
+  </div>
+</div>

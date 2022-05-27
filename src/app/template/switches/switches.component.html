@@ -1,0 +1,81 @@
+<h2>Template: <small>Switches</small></h2>
+<hr />
+
+<form #miFormulario="ngForm">
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Género</label>
+    <div class="col-sm-9">
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          id="radioMasc"
+          value="M"
+          [(ngModel)]="persona.genero"
+          name="radioGenero"
+          class="custom-control-input"
+        />
+        <label class="custom-control-label" for="customRadio1">Masculino</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          id="radioFem"
+          [(ngModel)]="persona.genero"
+          value="F"
+          name="radioGenero"
+          class="custom-control-input"
+        />
+        <label class="custom-control-label" for="customRadio2">Femenino</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Notificaciones</label>
+    <div class="col-sm-9">
+      <div class="custom-control custom-switch mt-1">
+        <input
+          type="checkbox"
+          [(ngModel)]="persona.notificaciones"
+          name="notificaciones"
+          class="custom-control-input"
+          id="customSwitch1"
+        />
+        <label class="custom-control-label" for="customSwitch1"
+          >Toggle this switch element</label
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label"></label>
+    <div class="col-sm-9">
+      <div class="custom-control custom-checkbox">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          id="customCheck1"
+          name="terminos"
+          [(ngModel)]="terminosYCondiciones"
+          required
+        />
+        <label class="custom-control-label" for="customCheck1"
+          >Check this custom checkbox</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button
+        class="btn btn-primary float-end"
+        [disabled]="miFormulario.invalid"
+      >
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>
+<h5>Valor del formulario</h5>
+<pre>{{ miFormulario.value | json }}</pre>
